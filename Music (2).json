@@ -1,10 +1,10 @@
 {
     "songs": [
         {
-            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Musique/Vision.mp3",
-            "title": "Mwaka Moon",
-            "artist": "Kalash • Damso",
-            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Cover/Vision.png",
+            "musicUrl": "https://github.com/Spoutnik-musique/lalalala/raw/main/Musique/Vision.mp3",
+            "title": "Vision",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://github.com/Spoutnik-musique/lalalala/raw/main/Cover/Vision.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Parole/Aucun.txt"
         }
     ]
