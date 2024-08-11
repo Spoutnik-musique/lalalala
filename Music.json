@@ -1,11 +1,11 @@
 {
     "songs": [
         {
-            "musicUrl": "https://github.com/Spoutnik-musique/lalalala/raw/main/Musique/Vision.mp3",
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vision.mp3",
             "title": "Vision",
             "artist": "Mungiki",
-            "thumbnailUrl": "https://github.com/Spoutnik-musique/lalalala/raw/main/Cover/Vision.png",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Parole/Aucun.txt"
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Vision.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
         }
     ]
 }
