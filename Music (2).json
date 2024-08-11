@@ -1,11 +1,11 @@
 {
     "songs": [
         {
-            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Musique/Mwaka%20Moon.mp3",
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Musique/Vision.mp3",
             "title": "Mwaka Moon",
             "artist": "Kalash • Damso",
-            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Cover/Mwaka%20Moon.jpg",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Parole/Mwaka_Moon.txt"
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Cover/Vision.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/test/main/Parole/Aucun.txt"
         }
     ]
 }
