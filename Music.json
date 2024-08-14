@@ -13,6 +13,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Vision.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Earthbourg_Reviens.mp3",
+            "title": "Earthbourg Reviens",
+            "artist": "Douglass",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Earthbourg_Reviens.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
         }
     ]
 }
