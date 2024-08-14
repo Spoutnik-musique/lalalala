@@ -1,17 +1,17 @@
 {
-    "songs": [
-        {
-            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vision.mp3",
-            "title": "Vision",
-            "artist": "Mungiki",
-            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Vision.png",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
-        },        
+    "songs": [   
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Pixel.mp3",
             "title": "Pixel",
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vision.mp3",
+            "title": "Vision",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Vision.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
         }
     ]
