@@ -5,21 +5,35 @@
             "title": "Pixel",
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Pixel.txt"
         },
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vision.mp3",
             "title": "Vision",
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Vision.png",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Vision.txt"
         },
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Earthbourg_Reviens.mp3",
             "title": "Earthbourg Reviens",
             "artist": "Douglass",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Earthbourg_Reviens.png",
-            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Earthbourg_Reviens.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Masqué.mp3",
+            "title": "Vision",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Masqué.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Masqué.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Privé.mp3",
+            "title": "Privé",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Privé.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Privé.txt"
         }
     ]
 }
