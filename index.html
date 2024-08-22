@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoutnik</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <link rel="stylesheet" href="https://use.typekit.net/cbr4cyw.css">
+    <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <span class="title">Spoutnik</span>
+            </div>
+            <div class="search-container">
+                <span class="search-icon material-icons-outlined">search</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="Search...">
+                <div id="searchResults" class="search-results"></div>
+            </div>
+            
+            <div id="suggestions-container" class="suggestions-container">
+                <div id="suggestions-list" class="suggestions-list"></div>
+            </div>
+        </div>
+
+        <div class="main">
+            <div class="sidebar">
+                <nav class="nav">
+                    <!-- Suggestions will appear here -->
+                    <button id="createPlaylistButton">Create Playlist</button>
+
+                    <div id="playlistsContainer" class="playlists-container">
+                    </div>
+                </nav>
+            </div>
+        
+            <div id="likeModal" class="modal">
+                <span class="close">&times;</span>
+                <h2>Sélectionnez une playlist</h2>
+                <div id="playlistOptions"></div>
+                <button id="cancelButton" class="modal-button">Annuler</button>
+            </div>
+            
+<div id="playlistModal" class="modal">
+    <input id="playlistName" type="text" placeholder="Playlist Name">
+    <button id="savePlaylistButton">Save Playlist</button>
+    <button id="playlistClose">Close</button>
+</div>
+<div id="deleteModal" class="modal">
+    <span class="close">&times;</span>
+    <p>Are you sure you want to delete this playlist?</p>
+    <button id="confirmDeleteButton">Yes, Delete</button>
+    <button id="cancelDeleteButton">Cancel</button>
+</div>
+
+            <!-- Modal pour ajouter des chansons à la playlist -->
+            <div id="addSongsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="addSongsClose">&times;</span>
+                    <h2>Ajouter des chansons à la playlist</h2>
+                    <div id="playlistSongsContainer">
+                        <!-- Songs will be listed here -->
+                    </div>
+                    <button id="saveSongsButton">Ajouter</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="footer">
+            <div class="volume-control">
+                <span id="volumeIcon" class="volume-icon material-icons-outlined">volume_up</span>
+                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50">
+            </div>
+            <div class="album-cover-container">
+                <img src="" alt="Album Cover" class="album-cover" id="album-cover">
+            </div>
+            <div class="info">
+                <div class="album-title" id="title">Titre</div>
+                <div class="album-artist" id="artist">Artiste</div>
+                <span id="LyricsButton" class="material-icons-outlined Lyrics-icon">mic</span>
+
+                <div class="progress-bar-container">
+                    <input type="range" id="progressBar" class="progress-bar" value="0" min="0" max="100">
+                    <span id="likeButton" class="material-icons-outlined like-icon">favorite_border</span>
+                </div>
+                
+                <div class="time" id="time">0:00 / 0:00</div>
+            </div>
+            <div class="controls">
+                <button id="shuffleButton" class="control-button">
+                    <span class="material-icons-outlined">shuffle</span>
+                </button>
+                <button id="prevButton" class="control-button">
+                    <span class="material-icons-outlined">skip_previous</span>
+                </button>
+                <button id="playPauseButton" class="control-button">
+                    <span class="material-icons-outlined">play_arrow</span>
+                </button>
+                <button id="nextButton" class="control-button">
+                    <span class="material-icons-outlined">skip_next</span>
+                </button>
+                <button id="repeatButton" class="control-button">
+                    <span class="material-icons-outlined">repeat</span>
+                </button>
+            </div>
+        </div>
+        <div id="background" class="background"></div>
+
+        <div class="lyrics-container" id="lyrics-container">
+            <div class="lyrics-content" id="lyrics-content"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

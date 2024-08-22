@@ -1,0 +1,719 @@
+body {
+    background-color: #1e293b; /* Background color similar to the first image */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100vw; /* Use vw for width */
+    height: 100vh; /* Use vh for height */
+    position: relative; /* Ensure proper positioning of background and footer */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow the container to take up available space */
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use vw for width */
+    height: 100vh; /* Use vh for height */
+    filter: blur(120px);
+    background-size: cover;
+    background-position: center;
+    animation: moveBackground 40s linear infinite;
+    z-index: -1; /* Ensure this element is behind the main content */
+}
+
+@keyframes moveBackground {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.album-cover {
+    width: 150px; /* Largeur de la couverture d'album */
+    height: 150px; /* Hauteur de la couverture d'album */
+    border-radius: 8px;
+    background-color: #4a5568; /* Couleur de fond en cas d'absence d'image */
+    position: absolute;
+    top: 20%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 86.5%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 3; /* Place la couverture au-dessus des autres éléments */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #35353510; /* Footer matches the header and sidebar */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Ombre seulement à droite */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search-container {
+    position: relative;
+    width: 50%;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a3a3a3;
+}
+
+.search-input {
+    width: 93%;
+    padding: 8px 16px 8px 40px;
+    border-radius: 9999px;
+    background-color: #4242423b; /* Couleur de fond */
+    border: none;
+    color: #ffffff;
+    outline: none;
+}
+/* Search Results Container */
+#searchResults {
+    display: none; /* Masquer par défaut */
+    position: absolute; /* Positionnement absolu sous la barre de recherche */
+    top: 100%; /* Positionne le conteneur juste en dessous de la barre de recherche */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Hauteur maximale pour éviter le débordement */
+    background: #a5a5a500; /* Fond transparent */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour les résultats */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    z-index: 3; /* Assure que le conteneur des résultats est au-dessus des autres éléments */
+}
+
+/* Results List */
+#searchResults {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Result Item */
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    background: #ffffff00; /* Fond transparent */
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    margin-bottom: 10px; /* Espace entre les éléments */
+}
+
+/* Pour le dernier élément, éviter le margin-bottom inutile */
+#searchResults .suggestion-item:last-child {
+    margin-bottom: 0;
+}
+
+.suggestion-item:hover {
+    background: #5e5e5e52;
+    transform: translateY(-2px);
+}
+
+/* Result Cover */
+.suggestion-cover {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+/* Result Info */
+.suggestion-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.suggestion-artist {
+    font-size: 14px;
+    color: #969696;
+}
+
+/* Custom Scrollbar */
+#searchResults::-webkit-scrollbar {
+    width: 8px; /* Largeur de la barre de défilement */
+}
+
+#searchResults::-webkit-scrollbar-thumb {
+    background-color: #888; /* Couleur du curseur de la barre de défilement */
+    border-radius: 4px; /* Arrondir les coins du curseur */
+}
+
+#searchResults::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Couleur du curseur au survol */
+}
+
+#searchResults::-webkit-scrollbar-track {
+    background-color: #ffffff00; /* Couleur de la piste de défilement */
+    border-radius: 4px; /* Arrondir les coins de la piste */
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    margin-bottom: 100px; /* Adjust for footer space */
+}
+
+.sidebar {
+    width: 20%;
+    height: 671px;
+    top: 15px;
+    background-color: #35353510; /* Footer matches the header and sidebar */
+    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2); /* Ombre douce seulement à droite */
+    padding: 16px;
+}
+
+
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-button {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+.nav-button.active, .nav-button:hover {
+    background-color: #4a5568;
+    border-radius: 4px;
+}
+
+.content {
+    flex: 1;
+    background-color: #33415552; /* Footer matches the header and sidebar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+.info {
+    text-align: center;
+}
+
+.album-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    position: absolute; /* Positionnement absolu pour permettre le contrôle précis */
+    top: 15%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 50%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
+    margin-bottom: 20px; /* Ajustez cette valeur en fonction de votre mise en page */
+}
+
+.album-artist {
+    font-size: 16px;
+    color: #c4c4c4;
+    position: absolute; /* Positionnement absolu pour permettre le contrôle précis */
+    top: 30%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 50%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
+    margin-bottom: 20px; /* Ajustez cette valeur en fonction de votre mise en page */
+}
+.time {
+    position: absolute; /* Position absolue pour utiliser left et top */
+    top: 92%; /* Centre verticalement */
+    left: 50%; /* Centre horizontalement */
+    transform: translate(-50%, -50%); /* Ajuste le centrage en fonction de la taille de l'élément */
+    color: #ffffff; /* Couleur du texte */
+    font-size: 14px; /* Taille de la police */
+    text-align: center; /* Centrer le texte */
+    z-index: 2; /* Assure que l'élément est au-dessus des autres si nécessaire */
+}
+
+.progress-bar-container {
+    position: fixed; /* Fixe la position de la barre de progression */
+    bottom: 20px; /* Distance du bas de la page */
+    left: 50%; /* Centre horizontalement la barre */
+    transform: translateX(-50%); /* Ajuste le centrage exact */
+    width: 80%; /* Largeur de la barre de progression */
+    max-width: 1200px; /* Largeur maximale si souhaitée */
+    z-index: 1; /* Place la barre de progression en dessous des contrôles */
+    position: absolute;      /* Permet un contrôle précis du positionnement */
+    top: 80%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 45%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
+}
+
+/* Styles de la barre de progression */
+.progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%; /* Occupe toute la largeur de son conteneur */
+    height: 6px;
+    background: #535353;
+    border-radius: 2px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+    position: absolute;      /* Permet un contrôle précis du positionnement */
+    top: 80%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 60%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
+}
+
+/* Apparence au survol */
+.progress-bar:hover {
+    opacity: 1;
+}
+
+/* Apparence du curseur pour différents navigateurs */
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 0; /* Cacher le curseur */
+    height: 0; /* Cacher le curseur */
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 0; /* Cacher le curseur */
+    height: 0; /* Cacher le curseur */
+}
+
+.progress-bar::-ms-thumb {
+    width: 0; /* Cacher le curseur */
+    height: 0; /* Cacher le curseur */
+}
+
+/* Apparence de la piste pour différents navigateurs */
+.progress-bar::-webkit-slider-runnable-track {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    height: 4px;
+    cursor: pointer;
+    background: #535353;
+    border-radius: 2px;
+}
+
+.progress-bar::-moz-range-track {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    height: 4px;
+    cursor: pointer;
+    background: #535353;
+    border-radius: 2px;
+}
+
+.progress-bar::-ms-track {
+    width: 100%; /* Occupe toute la largeur du conteneur */
+    height: 4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+.progress-bar::-ms-fill-lower {
+    background: #ffffff; /* Couleur blanche pour la partie remplie */
+    border-radius: 2px;
+}
+
+.progress-bar::-ms-fill-upper {
+    background: #535353;
+    border-radius: 2px;
+}
+
+.progress-bar::-webkit-slider-runnable-track {
+    background: linear-gradient(to right, #ffffff 0%, #ffffff var(--progress), #535353 var(--progress), #535353 100%);
+}
+
+.progress-bar::-moz-range-progress {
+    background-color: #ffffff; /* Couleur blanche pour la partie remplie */
+}
+
+.progress-bar::-ms-fill-lower {
+    background-color: #ffffff; /* Couleur blanche pour la partie remplie */
+}
+
+.current-song {
+    border: 2px solid white;
+    border-radius: 10px; /* Pour que le contour suive la forme arrondie de l'image de la couverture */
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px; /* Adjusted padding */
+    background-color: #35353510; /* Footer matches the header and sidebar */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Ombre seulement à droite */
+
+    position: fixed; /* Keep the footer at the bottom */
+    bottom: 0; /* Align to the bottom */
+    left: 0;
+    width: 100%; /* Full width */
+    z-index: 0; /* Place the footer below other elements */
+}
+
+.controls {
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    align-items: center;     /* Centre les boutons verticalement */
+    gap: 10px;               /* Espacement entre les boutons */
+    margin-top: 20px;        /* Espace au-dessus du conteneur de contrôles */
+    z-index: 2;              /* Assure que les contrôles sont au-dessus des autres éléments */
+    width: 100%;             /* Prend toute la largeur disponible */
+    position: absolute;      /* Permet un contrôle précis du positionnement */
+    top: 50%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 50%; /* Ajuste la position horizontale à 50% du parent */
+    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
+    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
+}
+
+.control-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff;
+    border: none;
+    background: none; /* Pas de fond pour les autres boutons */
+    transition: color 0.3s; /* Transition douce pour le changement de couleur */
+}
+
+.control-button:hover {
+    color: #ccc; /* Changement de couleur des icônes au survol */
+}
+
+#playPauseButton {
+    width: 50px; /* Largeur du bouton de lecture/pause */
+    height: 50px; /* Hauteur du bouton de lecture/pause */
+    font-size: 32px; /* Taille de police du bouton de lecture/pause */
+    background-color: rgba(255, 255, 255, 0.178); /* Fond légèrement transparent */
+    border-radius: 20%; /* Bouton rond */
+    transition: background-color 0.3s; /* Transition douce pour le changement de couleur de fond */
+}
+
+#playPauseButton:hover {
+    background-color: rgba(255, 255, 255, 0.301); /* Fond légèrement plus opaque au survol */
+}
+
+.control-icon, .play-icon {
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 1650px; /* Espace à droite pour l'alignement */
+    position: relative; /* Ajoutez cette ligne */
+    top: 60px; /* Déplace le contrôle du volume vers le bas de 100 pixels */
+}
+
+
+#volumeIcon {
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#volumeIcon:hover {
+    color: #ccc;
+}
+
+.volume-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100px; /* Ajuster selon la largeur souhaitée */
+    height: 4px;
+    background: #535353;
+    border-radius: 2px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity .2s;
+}
+
+.volume-slider:hover {
+    opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.volume-slider::-ms-thumb {
+    width: 12px;
+    height: 12px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+/* Suggestions Container */
+#suggestions-container {
+    display: none; /* Masquer par défaut */
+    position: absolute; /* Positionnement absolu sous la barre de recherche */
+    top: 100%; /* Positionne le conteneur juste en dessous de la barre de recherche */
+    left: 0;
+    width: 100%;
+    max-height: 300px; /* Hauteur maximale pour éviter le débordement */
+    background: #fff; /* Fond blanc pour les suggestions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour les suggestions */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    z-index: 3; /* Assure que le conteneur des suggestions est au-dessus des autres éléments */
+}
+/* Lyrics Container */
+.lyrics-container {
+    display: none; /* Masquer par défaut */
+    position: fixed; /* Fixe le conteneur à l'écran */
+    top: 50%; /* Centrer verticalement */
+    left: 50%; /* Centrer horizontalement */
+    transform: translate(-50%, -50%); /* Ajuster pour centrer parfaitement */
+    width: 90%; /* Largeur du conteneur */
+    max-width: 600px; /* Largeur maximale */
+    max-height: 80%; /* Hauteur maximale */
+    background: rgba(43, 43, 43, 0.151); /* Fond sombre semi-transparent */
+    border-radius: 10px; /* Coins arrondis */
+    padding: 20px; /* Espacement interne */
+    overflow-y: auto; /* Défilement vertical si nécessaire */
+    z-index: 4; /* Assurer que le conteneur est au-dessus des autres éléments */
+    color: #fff; /* Texte blanc */
+    font-family: Arial, sans-serif; /* Police */
+    backdrop-filter: blur(10px); /* Effet de flou pour le fond */
+    border: 1px solid #ffffff3a; /* Contour blanc de 2 pixels */
+}
+
+/* Masquer la barre de défilement pour WebKit (Chrome, Safari) */
+.lyrics-container::-webkit-scrollbar {
+    width: 0px; /* Largeur de la barre de défilement */
+    background: transparent; /* Fond transparent */
+}
+
+/* Masquer la barre de défilement pour Firefox */
+.lyrics-container {
+    scrollbar-width: none; /* Masquer la barre de défilement */
+}
+
+/* Lyrics Content */
+.lyrics-content {
+    line-height: 1.6; /* Espacement des lignes */
+    font-size: 18px; /* Taille de police */
+    white-space: pre-wrap; /* Préserve les retours à la ligne dans le texte */
+    word-wrap: break-word; /* Casse les mots longs */
+    text-align: center; /* Centre le texte */
+}
+
+/* Lyrics Close Button */
+.lyrics-close {
+    position: absolute; /* Positionner en haut à droite */
+    top: 10px; /* Espacement du haut */
+    right: 10px; /* Espacement de la droite */
+    font-size: 24px; /* Taille de la police */
+    color: #fff; /* Couleur du texte */
+    cursor: pointer; /* Curseur pointer pour indiquer cliquable */
+    transition: color 0.3s; /* Animation pour changement de couleur */
+}
+
+.lyrics-close:hover {
+    color: #ff0000; /* Changer la couleur au survol */
+}
+
+/* Mettre à jour les classes pour correspondre à celles utilisées en JavaScript */
+.lyrics-container.visible {
+    display: block; /* Afficher le conteneur lorsque la classe est ajoutée */
+    animation: fadeIn 0.5s ease-in-out; /* Animation d'apparition */
+}
+
+.lyrics-container.hidden {
+    display: none; /* Masquer le conteneur lorsque la classe est ajoutée */
+    animation: fadeOut 0.5s ease-in-out; /* Animation de disparition */
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+/* Styles pour le bouton "Créer une playlist" */
+#createPlaylistButton {
+    background-color: #4242423b; /* Couleur de fond */
+    color: #ffffff; /* Couleur du texte */
+    border: none; /* Supprimer la bordure */
+    padding: 10px 20px; /* Espacement interne */
+    border-radius: 4px; /* Coins arrondis */
+    font-size: 16px; /* Taille de la police */
+    cursor: pointer; /* Curseur pointer pour indiquer cliquable */
+    transition: background-color 0.3s, transform 0.3s; /* Transitions pour les effets visuels */
+    margin-top: 20px; /* Espacement au-dessus du bouton */
+}
+
+#createPlaylistButton:hover {
+    background-color: #2d3748; /* Couleur de fond au survol */
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+}
+
+#createPlaylistButton:focus {
+    outline: none; /* Supprimer le contour au focus */
+    box-shadow: 0 0 0 2px #ffffff; /* Ajouter un ombrage pour l'accessibilité */
+}
+.playlists-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 15px; /* Ajoute un espace cohérent entre les éléments */
+}
+
+.playlist-item {
+    background-color: #5757575e; /* Légère modification pour une meilleure harmonie */
+    margin: 10px 0;
+    padding: 15px; /* Augmenté pour plus de confort visuel */
+    border-radius: 10px; /* Bordures plus arrondies pour un style moderne */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Transition ajoutée pour l'ombre */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
+}
+
+.playlist-item:hover {
+    background-color: #ffffff56; /* Utilisation de la couleur d'accent en survol */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
+}
+.delete-icon {
+    color: #aaaaaa; /* Couleur par défaut */
+    margin-left: auto;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.delete-icon:hover {
+    color: rgb(252, 25, 25); /* Devient rouge au survol */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #42424257;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.modal.visible {
+    display: block;
+}
+
+.modal .close {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal #confirmDeleteButton {
+    background-color: red;
+    color: white;
+}
+
+.modal #cancelDeleteButton {
+    background-color: #ccc;
+}
+.like-icon {
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: -450px;
+    margin-top: -40px;
+    transition: color 0.3s, transform 0.3s;
+    z-index: 1000; /* Ensure this element is behind the main content */
+
+}
+
+.like-icon.liked {
+    color: rgb(255, 255, 255); /* Couleur de l'icône lorsqu'elle est likée */
+    transform: scale(1); /* Augmenter la taille légèrement lorsqu'elle est likée */
+}
+.Lyrics-icon {
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+    top: 55%; /* Ajuste la position verticale (50% pour centrer verticalement) */
+    left: 77%; /* Ajuste la position horizontale à 50% du parent */
+    transition: color 0.3s, transform 0.3s;
+    z-index: 1000; /* Ensure this element is behind the main content */
+
+}
+.playlist-content {
+    padding: 20px;
+    /* Ajoutez d'autres styles pour mettre en forme le contenu de la playlist */
+}
+
+.playlist-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
