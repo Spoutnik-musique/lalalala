@@ -55,6 +55,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/rétro_volume_2.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Aucun.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Quitter Midoria.mp3",
+            "title": "Quitter Midoria",
+            "artist": "Chint",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Quitter Midoria.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Quitter Midoria.txt"
         }
     ]
 }
