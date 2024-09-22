@@ -6,6 +6,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Pixel.txt"
+        }, 
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Nuage.mp3",
+            "title": "Nuage",
+            "artist": "Mungiki • Nela",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Nuage.txt"
         },
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vision.mp3",
@@ -57,10 +64,10 @@
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Quitter Midoria.txt"
         }, 
         {
-            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Nuage.mp3",
-            "title": "Nuage",
-            "artist": "Mungiki • Nela",
-            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Neige.mp3",
+            "title": "Neige",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Neige.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Nuage.txt"
         }
     ]
