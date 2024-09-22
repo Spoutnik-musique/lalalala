@@ -69,6 +69,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Neige.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Nuage.txt"
+        }, 
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Brume.mp3",
+            "title": "Brume",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Brume.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Brume.txt"
         }
     ]
 }
