@@ -76,6 +76,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Brume.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Brume.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Retours a Nédary -- Chint .mp3",
+            "title": "Retour à Néfary",
+            "artist": "Chint",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Quitter Midoria.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Retour à Néfary.txt"
         }
     ]
 }
