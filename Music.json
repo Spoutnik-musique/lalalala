@@ -1,12 +1,82 @@
 {
     "songs": [   
         {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Ancien%20Monde.mp3",
+            "title": "Ancien Monde",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Ancien Monde.txt"
+        }, 
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Musique/Fantôme%20.mp3",
+            "title": "Fantôme",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Fantôme.txt"
+        },  
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Fréquence.mp3",
+            "title": "Fréquence",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Fréquence.txt"
+        },  
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Horizon.mp3",
+            "title": "Horizon",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Horizon.txt"
+        },  
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Odyssée.mp3",
+            "title": "Odyssée",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Odyssée.txt"
+        },  
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Passé.mp3",
+            "title": "Passé",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Passé.txt"
+        },   
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Rétro.mp3",
+            "title": "Rétro",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Rétro.txt"
+        },   
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Rêve.mp3",
+            "title": "Rêve",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Rêve.txt"
+        },   
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/VHS.mp3",
+            "title": "VHS",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/VHS.txt"
+        },   
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Vintage.mp3",
+            "title": "Vintage",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Vintage.txt"
+        },   
+        {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Pixel.mp3",
             "title": "Pixel",
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Rétro.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Pixel.txt"
-        }, 
+        },    
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Nuage.mp3",
             "title": "Nuage",
