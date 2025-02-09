@@ -1,5 +1,12 @@
 {
-    "songs": [   
+    "songs": [
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/PNJ.mp3",
+            "title": "PNJ",
+            "artist": "Mungiki",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/PNJ-Mungiki.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/PNJ.txt"
+        },   
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Ancien%20Monde.mp3",
             "title": "Ancien Monde",
@@ -111,6 +118,13 @@
             "artist": "Mungiki",
             "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Privé.png",
             "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Privé.txt"
+        },
+        {
+            "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Paname.mp3",
+            "title": "Paname",
+            "artist": "Nela",
+            "thumbnailUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Cover/Paname-Nela.png",
+            "Parole": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Parole/Paname-Nela.txt"
         },
         {
             "musicUrl": "https://raw.githubusercontent.com/Spoutnik-musique/lalalala/main/Musique/Seule.mp3",
