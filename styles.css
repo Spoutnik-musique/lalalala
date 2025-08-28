@@ -1,719 +1,482 @@
-body {
-    background-color: #1e293b; /* Background color similar to the first image */
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    width: 100vw; /* Use vw for width */
-    height: 100vh; /* Use vh for height */
-    position: relative; /* Ensure proper positioning of background and footer */
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Allow the container to take up available space */
-}
-
-.background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw; /* Use vw for width */
-    height: 100vh; /* Use vh for height */
-    filter: blur(120px);
-    background-size: cover;
-    background-position: center;
-    animation: moveBackground 40s linear infinite;
-    z-index: -1; /* Ensure this element is behind the main content */
-}
-
-@keyframes moveBackground {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
-}
-
-.album-cover {
-    width: 150px; /* Largeur de la couverture d'album */
-    height: 150px; /* Hauteur de la couverture d'album */
-    border-radius: 8px;
-    background-color: #4a5568; /* Couleur de fond en cas d'absence d'image */
-    position: absolute;
-    top: 20%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 86.5%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 3; /* Place la couverture au-dessus des autres éléments */
-}
-
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    background-color: #35353510; /* Footer matches the header and sidebar */
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Ombre seulement à droite */
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.title {
-    margin-left: 8px;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.search-container {
-    position: relative;
-    width: 50%;
-}
-
-.search-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #a3a3a3;
-}
-
-.search-input {
-    width: 93%;
-    padding: 8px 16px 8px 40px;
-    border-radius: 9999px;
-    background-color: #4242423b; /* Couleur de fond */
-    border: none;
-    color: #ffffff;
-    outline: none;
-}
-/* Search Results Container */
-#searchResults {
-    display: none; /* Masquer par défaut */
-    position: absolute; /* Positionnement absolu sous la barre de recherche */
-    top: 100%; /* Positionne le conteneur juste en dessous de la barre de recherche */
-    left: 0;
-    width: 100%;
-    max-height: 300px; /* Hauteur maximale pour éviter le débordement */
-    background: #a5a5a500; /* Fond transparent */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour les résultats */
-    overflow-y: auto; /* Défilement vertical si nécessaire */
-    z-index: 3; /* Assure que le conteneur des résultats est au-dessus des autres éléments */
-}
-
-/* Results List */
-#searchResults {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-/* Result Item */
-.suggestion-item {
-    display: flex;
-    align-items: center;
-    background: #ffffff00; /* Fond transparent */
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-    margin-bottom: 10px; /* Espace entre les éléments */
-}
-
-/* Pour le dernier élément, éviter le margin-bottom inutile */
-#searchResults .suggestion-item:last-child {
-    margin-bottom: 0;
-}
-
-.suggestion-item:hover {
-    background: #5e5e5e52;
-    transform: translateY(-2px);
-}
-
-/* Result Cover */
-.suggestion-cover {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    margin-right: 10px;
-}
-
-/* Result Info */
-.suggestion-info {
-    display: flex;
-    flex-direction: column;
-}
-
-.suggestion-title {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-}
-
-.suggestion-artist {
-    font-size: 14px;
-    color: #969696;
-}
-
-/* Custom Scrollbar */
-#searchResults::-webkit-scrollbar {
-    width: 8px; /* Largeur de la barre de défilement */
-}
-
-#searchResults::-webkit-scrollbar-thumb {
-    background-color: #888; /* Couleur du curseur de la barre de défilement */
-    border-radius: 4px; /* Arrondir les coins du curseur */
-}
-
-#searchResults::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Couleur du curseur au survol */
-}
-
-#searchResults::-webkit-scrollbar-track {
-    background-color: #ffffff00; /* Couleur de la piste de défilement */
-    border-radius: 4px; /* Arrondir les coins de la piste */
-}
-
-.main {
-    display: flex;
-    flex: 1;
-    margin-bottom: 100px; /* Adjust for footer space */
-}
-
-.sidebar {
-    width: 20%;
-    height: 671px;
-    top: 15px;
-    background-color: #35353510; /* Footer matches the header and sidebar */
-    box-shadow: 4px 0 4px rgba(0, 0, 0, 0.2); /* Ombre douce seulement à droite */
-    padding: 16px;
-}
-
-
-
-.nav {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.nav-button {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    background-color: transparent;
-    color: #ffffff;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-}
-
-.nav-button.active, .nav-button:hover {
-    background-color: #4a5568;
-    border-radius: 4px;
-}
-
-.content {
-    flex: 1;
-    background-color: #33415552; /* Footer matches the header and sidebar */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-}
-
-.info {
-    text-align: center;
-}
-
-.album-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    position: absolute; /* Positionnement absolu pour permettre le contrôle précis */
-    top: 15%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 50%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
-    margin-bottom: 20px; /* Ajustez cette valeur en fonction de votre mise en page */
-}
-
-.album-artist {
-    font-size: 16px;
-    color: #c4c4c4;
-    position: absolute; /* Positionnement absolu pour permettre le contrôle précis */
-    top: 30%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 50%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
-    margin-bottom: 20px; /* Ajustez cette valeur en fonction de votre mise en page */
-}
-.time {
-    position: absolute; /* Position absolue pour utiliser left et top */
-    top: 92%; /* Centre verticalement */
-    left: 50%; /* Centre horizontalement */
-    transform: translate(-50%, -50%); /* Ajuste le centrage en fonction de la taille de l'élément */
-    color: #ffffff; /* Couleur du texte */
-    font-size: 14px; /* Taille de la police */
-    text-align: center; /* Centrer le texte */
-    z-index: 2; /* Assure que l'élément est au-dessus des autres si nécessaire */
-}
-
-.progress-bar-container {
-    position: fixed; /* Fixe la position de la barre de progression */
-    bottom: 20px; /* Distance du bas de la page */
-    left: 50%; /* Centre horizontalement la barre */
-    transform: translateX(-50%); /* Ajuste le centrage exact */
-    width: 80%; /* Largeur de la barre de progression */
-    max-width: 1200px; /* Largeur maximale si souhaitée */
-    z-index: 1; /* Place la barre de progression en dessous des contrôles */
-    position: absolute;      /* Permet un contrôle précis du positionnement */
-    top: 80%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 45%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
-}
-
-/* Styles de la barre de progression */
-.progress-bar {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100%; /* Occupe toute la largeur de son conteneur */
-    height: 6px;
-    background: #535353;
-    border-radius: 2px;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity .2s;
-    position: absolute;      /* Permet un contrôle précis du positionnement */
-    top: 80%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 60%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
-}
-
-/* Apparence au survol */
-.progress-bar:hover {
-    opacity: 1;
-}
-
-/* Apparence du curseur pour différents navigateurs */
-.progress-bar::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 0; /* Cacher le curseur */
-    height: 0; /* Cacher le curseur */
-}
-
-.progress-bar::-moz-range-thumb {
-    width: 0; /* Cacher le curseur */
-    height: 0; /* Cacher le curseur */
-}
-
-.progress-bar::-ms-thumb {
-    width: 0; /* Cacher le curseur */
-    height: 0; /* Cacher le curseur */
-}
-
-/* Apparence de la piste pour différents navigateurs */
-.progress-bar::-webkit-slider-runnable-track {
-    width: 100%; /* Occupe toute la largeur du conteneur */
-    height: 4px;
-    cursor: pointer;
-    background: #535353;
-    border-radius: 2px;
-}
-
-.progress-bar::-moz-range-track {
-    width: 100%; /* Occupe toute la largeur du conteneur */
-    height: 4px;
-    cursor: pointer;
-    background: #535353;
-    border-radius: 2px;
-}
-
-.progress-bar::-ms-track {
-    width: 100%; /* Occupe toute la largeur du conteneur */
-    height: 4px;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-}
-
-.progress-bar::-ms-fill-lower {
-    background: #ffffff; /* Couleur blanche pour la partie remplie */
-    border-radius: 2px;
-}
-
-.progress-bar::-ms-fill-upper {
-    background: #535353;
-    border-radius: 2px;
-}
-
-.progress-bar::-webkit-slider-runnable-track {
-    background: linear-gradient(to right, #ffffff 0%, #ffffff var(--progress), #535353 var(--progress), #535353 100%);
-}
-
-.progress-bar::-moz-range-progress {
-    background-color: #ffffff; /* Couleur blanche pour la partie remplie */
-}
-
-.progress-bar::-ms-fill-lower {
-    background-color: #ffffff; /* Couleur blanche pour la partie remplie */
-}
-
-.current-song {
-    border: 2px solid white;
-    border-radius: 10px; /* Pour que le contour suive la forme arrondie de l'image de la couverture */
-}
-
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 80px; /* Adjusted padding */
-    background-color: #35353510; /* Footer matches the header and sidebar */
-    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.2); /* Ombre seulement à droite */
-
-    position: fixed; /* Keep the footer at the bottom */
-    bottom: 0; /* Align to the bottom */
-    left: 0;
-    width: 100%; /* Full width */
-    z-index: 0; /* Place the footer below other elements */
-}
-
-.controls {
-    display: flex;
-    justify-content: center; /* Centre les boutons horizontalement */
-    align-items: center;     /* Centre les boutons verticalement */
-    gap: 10px;               /* Espacement entre les boutons */
-    margin-top: 20px;        /* Espace au-dessus du conteneur de contrôles */
-    z-index: 2;              /* Assure que les contrôles sont au-dessus des autres éléments */
-    width: 100%;             /* Prend toute la largeur disponible */
-    position: absolute;      /* Permet un contrôle précis du positionnement */
-    top: 50%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 50%; /* Ajuste la position horizontale à 50% du parent */
-    transform: translate(-50%, -50%); /* Centre l'élément en ajustant la position par rapport à son propre centre */
-    z-index: 2; /* Place les infos au-dessus des autres éléments mais en dessous des contrôles */
-}
-
-.control-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    cursor: pointer;
-    color: #fff;
-    border: none;
-    background: none; /* Pas de fond pour les autres boutons */
-    transition: color 0.3s; /* Transition douce pour le changement de couleur */
-}
-
-.control-button:hover {
-    color: #ccc; /* Changement de couleur des icônes au survol */
-}
-
-#playPauseButton {
-    width: 50px; /* Largeur du bouton de lecture/pause */
-    height: 50px; /* Hauteur du bouton de lecture/pause */
-    font-size: 32px; /* Taille de police du bouton de lecture/pause */
-    background-color: rgba(255, 255, 255, 0.178); /* Fond légèrement transparent */
-    border-radius: 20%; /* Bouton rond */
-    transition: background-color 0.3s; /* Transition douce pour le changement de couleur de fond */
-}
-
-#playPauseButton:hover {
-    background-color: rgba(255, 255, 255, 0.301); /* Fond légèrement plus opaque au survol */
-}
-
-.control-icon, .play-icon {
-    color: #ffffff;
-    cursor: pointer;
-}
-
-.volume-control {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-left: 1650px; /* Espace à droite pour l'alignement */
-    position: relative; /* Ajoutez cette ligne */
-    top: 60px; /* Déplace le contrôle du volume vers le bas de 100 pixels */
-}
-
-
-#volumeIcon {
-    font-size: 24px;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-#volumeIcon:hover {
-    color: #ccc;
-}
-
-.volume-slider {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 100px; /* Ajuster selon la largeur souhaitée */
-    height: 4px;
-    background: #535353;
-    border-radius: 2px;
-    outline: none;
-    opacity: 0.7;
-    transition: opacity .2s;
-}
-
-.volume-slider:hover {
-    opacity: 1;
-}
-
-.volume-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 12px;
-    height: 12px;
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.volume-slider::-moz-range-thumb {
-    width: 12px;
-    height: 12px;
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.volume-slider::-ms-thumb {
-    width: 12px;
-    height: 12px;
-    background: #ffffff;
-    border-radius: 50%;
-    cursor: pointer;
-}
-/* Suggestions Container */
-#suggestions-container {
-    display: none; /* Masquer par défaut */
-    position: absolute; /* Positionnement absolu sous la barre de recherche */
-    top: 100%; /* Positionne le conteneur juste en dessous de la barre de recherche */
-    left: 0;
-    width: 100%;
-    max-height: 300px; /* Hauteur maximale pour éviter le débordement */
-    background: #fff; /* Fond blanc pour les suggestions */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre pour les suggestions */
-    overflow-y: auto; /* Défilement vertical si nécessaire */
-    z-index: 3; /* Assure que le conteneur des suggestions est au-dessus des autres éléments */
-}
-/* Lyrics Container */
-.lyrics-container {
-    display: none; /* Masquer par défaut */
-    position: fixed; /* Fixe le conteneur à l'écran */
-    top: 50%; /* Centrer verticalement */
-    left: 50%; /* Centrer horizontalement */
-    transform: translate(-50%, -50%); /* Ajuster pour centrer parfaitement */
-    width: 90%; /* Largeur du conteneur */
-    max-width: 600px; /* Largeur maximale */
-    max-height: 80%; /* Hauteur maximale */
-    background: rgba(43, 43, 43, 0.151); /* Fond sombre semi-transparent */
-    border-radius: 10px; /* Coins arrondis */
-    padding: 20px; /* Espacement interne */
-    overflow-y: auto; /* Défilement vertical si nécessaire */
-    z-index: 4; /* Assurer que le conteneur est au-dessus des autres éléments */
-    color: #fff; /* Texte blanc */
-    font-family: Arial, sans-serif; /* Police */
-    backdrop-filter: blur(10px); /* Effet de flou pour le fond */
-    border: 1px solid #ffffff3a; /* Contour blanc de 2 pixels */
-}
-
-/* Masquer la barre de défilement pour WebKit (Chrome, Safari) */
-.lyrics-container::-webkit-scrollbar {
-    width: 0px; /* Largeur de la barre de défilement */
-    background: transparent; /* Fond transparent */
-}
-
-/* Masquer la barre de défilement pour Firefox */
-.lyrics-container {
-    scrollbar-width: none; /* Masquer la barre de défilement */
-}
-
-/* Lyrics Content */
-.lyrics-content {
-    line-height: 1.6; /* Espacement des lignes */
-    font-size: 18px; /* Taille de police */
-    white-space: pre-wrap; /* Préserve les retours à la ligne dans le texte */
-    word-wrap: break-word; /* Casse les mots longs */
-    text-align: center; /* Centre le texte */
-}
-
-/* Lyrics Close Button */
-.lyrics-close {
-    position: absolute; /* Positionner en haut à droite */
-    top: 10px; /* Espacement du haut */
-    right: 10px; /* Espacement de la droite */
-    font-size: 24px; /* Taille de la police */
-    color: #fff; /* Couleur du texte */
-    cursor: pointer; /* Curseur pointer pour indiquer cliquable */
-    transition: color 0.3s; /* Animation pour changement de couleur */
-}
-
-.lyrics-close:hover {
-    color: #ff0000; /* Changer la couleur au survol */
-}
-
-/* Mettre à jour les classes pour correspondre à celles utilisées en JavaScript */
-.lyrics-container.visible {
-    display: block; /* Afficher le conteneur lorsque la classe est ajoutée */
-    animation: fadeIn 0.5s ease-in-out; /* Animation d'apparition */
-}
-
-.lyrics-container.hidden {
-    display: none; /* Masquer le conteneur lorsque la classe est ajoutée */
-    animation: fadeOut 0.5s ease-in-out; /* Animation de disparition */
-}
-
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-/* Styles pour le bouton "Créer une playlist" */
-#createPlaylistButton {
-    background-color: #4242423b; /* Couleur de fond */
-    color: #ffffff; /* Couleur du texte */
-    border: none; /* Supprimer la bordure */
-    padding: 10px 20px; /* Espacement interne */
-    border-radius: 4px; /* Coins arrondis */
-    font-size: 16px; /* Taille de la police */
-    cursor: pointer; /* Curseur pointer pour indiquer cliquable */
-    transition: background-color 0.3s, transform 0.3s; /* Transitions pour les effets visuels */
-    margin-top: 20px; /* Espacement au-dessus du bouton */
-}
-
-#createPlaylistButton:hover {
-    background-color: #2d3748; /* Couleur de fond au survol */
-    transform: scale(1.05); /* Légère augmentation de la taille au survol */
-}
-
-#createPlaylistButton:focus {
-    outline: none; /* Supprimer le contour au focus */
-    box-shadow: 0 0 0 2px #ffffff; /* Ajouter un ombrage pour l'accessibilité */
-}
-.playlists-container {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    gap: 15px; /* Ajoute un espace cohérent entre les éléments */
-}
-
-.playlist-item {
-    background-color: #5757575e; /* Légère modification pour une meilleure harmonie */
-    margin: 10px 0;
-    padding: 15px; /* Augmenté pour plus de confort visuel */
-    border-radius: 10px; /* Bordures plus arrondies pour un style moderne */
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Transition ajoutée pour l'ombre */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre légère pour un effet de profondeur */
-}
-
-.playlist-item:hover {
-    background-color: #ffffff56; /* Utilisation de la couleur d'accent en survol */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Ombre plus prononcée au survol */
-}
-.delete-icon {
-    color: #aaaaaa; /* Couleur par défaut */
-    margin-left: auto;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.delete-icon:hover {
-    color: rgb(252, 25, 25); /* Devient rouge au survol */
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #42424257;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    width: 300px;
-    text-align: center;
-}
-
-.modal.visible {
-    display: block;
-}
-
-.modal .close {
-    float: right;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.modal button {
-    margin: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.modal #confirmDeleteButton {
-    background-color: red;
-    color: white;
-}
-
-.modal #cancelDeleteButton {
-    background-color: #ccc;
-}
-.like-icon {
-    position: absolute;
-    font-size: 24px;
-    cursor: pointer;
-    margin-left: -450px;
-    margin-top: -40px;
-    transition: color 0.3s, transform 0.3s;
-    z-index: 1000; /* Ensure this element is behind the main content */
-
-}
-
-.like-icon.liked {
-    color: rgb(255, 255, 255); /* Couleur de l'icône lorsqu'elle est likée */
-    transform: scale(1); /* Augmenter la taille légèrement lorsqu'elle est likée */
-}
-.Lyrics-icon {
-    position: absolute;
-    font-size: 24px;
-    cursor: pointer;
-    top: 55%; /* Ajuste la position verticale (50% pour centrer verticalement) */
-    left: 77%; /* Ajuste la position horizontale à 50% du parent */
-    transition: color 0.3s, transform 0.3s;
-    z-index: 1000; /* Ensure this element is behind the main content */
-
-}
-.playlist-content {
-    padding: 20px;
-    /* Ajoutez d'autres styles pour mettre en forme le contenu de la playlist */
-}
-
-.playlist-item {
-    cursor: pointer;
-    margin-bottom: 10px;
-}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mes liens de recettes</title>
+  <meta name="description" content="Un petit site pour enregistrer, organiser et retrouver facilement vos liens de recettes de cuisine." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%23ff6b6b' d='M32 58s22-12.8 22-31A14 14 0 0 0 32 15a14 14 0 0 0-22 12c0 18.2 22 31 22 31Z'/%3E%3C/svg%3E"/>
+  <style>
+    :root{
+      --bg:#0b0f14;           /* page background */
+      --panel:#0f141b;        /* surfaces */
+      --panel-2:#0c1117;      /* darker surfaces */
+      --text:#e6edf3;         /* primary text */
+      --muted:#9aa4b2;        /* secondary text */
+      --accent:#24c8db;       /* links / accents */
+      --accent-2:#ff6b6b;     /* delete / warn */
+      --ring: rgba(36,200,219,.35);
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial; color:var(--text);
+      background: radial-gradient(1200px 600px at 10% -10%, rgba(36,200,219,.08), transparent 60%),
+                  radial-gradient(1200px 600px at 90% 0%, rgba(255,107,107,.07), transparent 60%),
+                  var(--bg);
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:1100px; margin:0 auto; padding:28px}
+    header{display:flex; align-items:center; gap:16px; margin-bottom:18px}
+    .logo{width:44px; height:44px; border-radius:50%; display:grid; place-items:center; background:linear-gradient(135deg, rgba(36,200,219,.2), rgba(255,107,107,.2)); box-shadow:0 6px 30px rgba(0,0,0,.35)}
+    .logo svg{width:24px; height:24px}
+    h1{font-size:1.6rem; margin:0}
+    .muted{color:var(--muted)}
+
+    .bar{display:grid; grid-template-columns:1fr auto; gap:12px; margin:18px 0}
+    .search{display:flex; gap:8px; align-items:center; background:var(--panel); border:1px solid #131a22; padding:10px 12px; border-radius:999px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.02)}
+    .search input{flex:1; outline:none; background:transparent; border:0; color:var(--text); font-size:15px}
+
+    .actions{display:flex; gap:8px; flex-wrap:wrap}
+    .btn{appearance:none; border:1px solid #1a2029; background:linear-gradient(180deg, #0f141b, #0c1117); color:var(--text); padding:10px 14px; border-radius:12px; cursor:pointer; transition:.2s transform; box-shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 8px 24px rgba(0,0,0,.25)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{border-color:#1a2f36; background:linear-gradient(180deg, #12242a, #0f1f24)}
+    .btn.warn{border-color:#3b1a1a; background:linear-gradient(180deg, #2a1212, #221010); color:#ffd6d6}
+
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,.02), transparent), var(--panel); border:1px solid #131a22; border-radius:var(--radius); box-shadow:0 8px 40px rgba(0,0,0,.35)}
+
+    /* Form */
+    .form{padding:16px; display:grid; grid-template-columns:repeat(12,1fr); gap:12px}
+    .form .field{grid-column: span 12; display:flex; flex-direction:column; gap:6px}
+    .form label{font-size:12px; letter-spacing:.2px; color:var(--muted)}
+    .form input,.form textarea{width:100%; padding:12px 12px; border-radius:12px; border:1px solid #1a2029; background:linear-gradient(180deg, #0f141b, #0c1117); color:var(--text)}
+    .form textarea{min-height:70px; resize:vertical}
+    .form .row{grid-column: span 12; display:grid; grid-template-columns: 1fr 2fr; gap:12px}
+    .form .actions{grid-column: span 12; justify-content:flex-end}
+
+    @media (min-width: 760px){
+      .form .title{grid-column: span 5}
+      .form .url{grid-column: span 7}
+      .form .tags{grid-column: span 6}
+      .form .notes{grid-column: span 6}
+    }
+
+    /* Tags */
+    .taglist{display:flex; gap:8px; flex-wrap:wrap; padding:12px 16px; border-top:1px dashed #1b2430}
+    .tag{padding:6px 10px; border-radius:999px; background:#0f151c; border:1px solid #141c26; color:#b8c2d0; cursor:pointer; font-size:13px}
+    .tag.active{outline:2px solid var(--ring)}
+
+    /* Grid */
+    .grid{display:grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap:12px; padding:16px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), transparent), var(--panel); border:1px solid #131a22; border-radius:16px; padding:14px; display:flex; gap:12px; align-items:flex-start; transition:.15s transform; position:relative}
+    .card:hover{transform:translateY(-1px)}
+    .drag{position:absolute; inset:0; border-radius:16px; outline:2px dashed transparent; pointer-events:none}
+    .card.drag-over .drag{outline-color:var(--ring)}
+
+    .favicon{width:20px; height:20px; border-radius:4px; flex:0 0 auto}
+    .title{font-weight:600}
+    .meta{font-size:12px; color:var(--muted)}
+    .card .tags{display:flex; gap:6px; flex-wrap:wrap; margin-top:6px}
+    .chip{font-size:12px; padding:4px 8px; border-radius:999px; background:#0f151c; border:1px solid #141c26; color:#b8c2d0}
+
+    .card-actions{margin-left:auto; display:flex; gap:6px}
+    .iconbtn{display:grid; place-items:center; width:34px; height:34px; border-radius:10px; border:1px solid #1a2029; background:linear-gradient(180deg, #0f141b, #0c1117); cursor:pointer}
+    .iconbtn:hover{outline:2px solid var(--ring)}
+
+    .empty{padding:32px; text-align:center; color:var(--muted)}
+    footer{opacity:.8; font-size:12px; padding:16px; text-align:center}
+    .hidden{display:none !important}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s8-4.8 8-11A5 5 0 0 0 7.7 6.3 5 5 0 0 0 4 10c0 6.2 8 11 8 11z"/></svg>
+      </div>
+      <div>
+        <h1>Mes liens de recettes</h1>
+        <div class="muted">Ajoutez, étiquetez, cherchez et exportez vos recettes préférées.</div>
+      </div>
+    </header>
+
+    <div class="bar">
+      <div class="search panel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="muted"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input id="q" placeholder="Rechercher par titre, tags ou notes… (Ctrl/⌘+K)" />
+      </div>
+      <div class="actions">
+        <button class="btn primary" id="btnExport" title="Exporter en JSON">Exporter</button>
+        <button class="btn" id="btnImport" title="Importer depuis un fichier JSON">Importer</button>
+        <input type="file" id="fileImport" accept="application/json" class="hidden" />
+        <button class="btn" id="btnClear" title="Tout effacer (avec sauvegarde)">Tout effacer</button>
+      </div>
+    </div>
+
+    <section class="panel">
+      <form id="form" class="form" autocomplete="off">
+        <div class="field title">
+          <label for="title">Titre*</label>
+          <input id="title" placeholder="Ex: Poulet basquaise" required />
+        </div>
+        <div class="field url">
+          <label for="url">Lien (URL)*</label>
+          <input id="url" placeholder="https://exemple.com/ma-recette" required />
+        </div>
+        <div class="field tags">
+          <label for="tags">Tags (séparés par des virgules)</label>
+          <input id="tags" placeholder="poulet, rapide, sans-gluten" />
+        </div>
+        <div class="field notes">
+          <label for="notes">Notes</label>
+          <textarea id="notes" placeholder="Temps de cuisson, variantes, ce que tu as modifié…"></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn primary" id="submitBtn">Ajouter</button>
+          <button type="button" class="btn hidden" id="cancelEdit">Annuler</button>
+        </div>
+      </form>
+      <div class="taglist" id="taglist"></div>
+      <div id="empty" class="empty">Aucun lien pour l’instant. Ajoutez votre première recette ci-dessus ✨</div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+
+    <footer class="muted">Vos données sont stockées uniquement dans votre navigateur (localStorage). Pensez à exporter régulièrement un fichier de sauvegarde.</footer>
+  </div>
+
+<script>
+(function(){
+  const LS_KEY = 'recette_links_v1';
+  const state = {
+    items: load(),
+    query: '',
+    filterTag: null,
+    editingId: null
+  };
+
+  const $ = sel => document.querySelector(sel);
+  const grid = $('#grid');
+  const empty = $('#empty');
+  const form = $('#form');
+  const submitBtn = $('#submitBtn');
+  const cancelEdit = $('#cancelEdit');
+  const inputTitle = $('#title');
+  const inputUrl = $('#url');
+  const inputTags = $('#tags');
+  const inputNotes = $('#notes');
+  const inputQ = $('#q');
+  const taglist = $('#taglist');
+  const btnExport = $('#btnExport');
+  const btnImport = $('#btnImport');
+  const fileImport = $('#fileImport');
+  const btnClear = $('#btnClear');
+
+  function load(){
+    try{
+      const raw = localStorage.getItem(LS_KEY);
+      return raw ? JSON.parse(raw) : [];
+    }catch(e){
+      console.error(e); return [];
+    }
+  }
+  function save(){
+    localStorage.setItem(LS_KEY, JSON.stringify(state.items));
+  }
+
+  function uid(){ return Math.random().toString(36).slice(2,9) }
+
+  function parseTags(s){
+    return (s||'')
+      .split(',')
+      .map(t=>t.trim())
+      .filter(Boolean)
+      .map(t=>t.toLowerCase())
+  }
+
+  function domainFromUrl(url){
+    try{ return new URL(url).hostname.replace(/^www\./,''); }catch{ return '' }
+  }
+  function favicon(url){
+    const host = domainFromUrl(url);
+    return host ? `https://icons.duckduckgo.com/ip3/${host}.ico` : '';
+  }
+
+  function validateUrl(u){
+    try{
+      const x = new URL(u);
+      return ['http:','https:'].includes(x.protocol);
+    }catch{ return false }
+  }
+
+  function clearForm(){
+    form.reset();
+    submitBtn.textContent = 'Ajouter';
+    cancelEdit.classList.add('hidden');
+    state.editingId = null;
+  }
+
+  function upsert(e){
+    e.preventDefault();
+    const title = inputTitle.value.trim();
+    const url = inputUrl.value.trim();
+    if(!title || !url) return;
+    if(!validateUrl(url)) { alert('URL invalide. Utilisez http(s)://…'); return }
+    const tags = parseTags(inputTags.value);
+    const notes = inputNotes.value.trim();
+
+    if(state.editingId){
+      const idx = state.items.findIndex(i=>i.id===state.editingId);
+      if(idx>-1){ state.items[idx] = {...state.items[idx], title, url, tags, notes, updatedAt: Date.now()}; }
+    }else{
+      state.items.unshift({ id:uid(), title, url, tags, notes, createdAt:Date.now(), updatedAt:Date.now() });
+    }
+    save();
+    clearForm();
+    render();
+  }
+
+  function editItem(id){
+    const it = state.items.find(i=>i.id===id);
+    if(!it) return;
+    inputTitle.value = it.title;
+    inputUrl.value = it.url;
+    inputTags.value = it.tags.join(', ');
+    inputNotes.value = it.notes || '';
+    submitBtn.textContent = 'Enregistrer';
+    cancelEdit.classList.remove('hidden');
+    state.editingId = id;
+    inputTitle.focus();
+  }
+
+  function deleteItem(id){
+    if(!confirm('Supprimer ce lien de recette ?')) return;
+    state.items = state.items.filter(i=>i.id!==id);
+    save();
+    render();
+  }
+
+  function cloneItem(id){
+    const it = state.items.find(i=>i.id===id);
+    if(!it) return;
+    state.items.unshift({ ...it, id:uid(), createdAt:Date.now(), updatedAt:Date.now() });
+    save();
+    render();
+  }
+
+  function copyToClipboard(text){
+    navigator.clipboard?.writeText(text).then(()=>{
+      toast('Lien copié');
+    }).catch(()=>{});
+  }
+
+  function toast(msg){
+    const t = document.createElement('div');
+    t.textContent = msg;
+    t.style.position='fixed'; t.style.bottom='22px'; t.style.left='50%'; t.style.transform='translateX(-50%)';
+    t.style.background='#0f141b'; t.style.border='1px solid #1a2029'; t.style.padding='10px 14px'; t.style.borderRadius='12px'; t.style.boxShadow='0 10px 30px rgba(0,0,0,.4)';
+    document.body.appendChild(t);
+    setTimeout(()=>t.remove(), 1300);
+  }
+
+  function formatDate(ts){
+    try{ return new Date(ts).toLocaleDateString('fr-FR', {year:'numeric', month:'short', day:'2-digit'}) }catch{ return '' }
+  }
+
+  function allTags(){
+    const s = new Set();
+    state.items.forEach(i=>i.tags.forEach(t=>s.add(t)));
+    return Array.from(s).sort();
+  }
+
+  function renderTags(){
+    const tags = allTags();
+    taglist.innerHTML = '';
+    if(!tags.length){ taglist.classList.add('hidden'); return }
+    taglist.classList.remove('hidden');
+    const mk = (name)=>{
+      const el = document.createElement('button');
+      el.type='button';
+      el.className='tag'+(state.filterTag===name?' active':'');
+      el.textContent = '#'+name;
+      el.addEventListener('click', ()=>{
+        state.filterTag = state.filterTag===name ? null : name;
+        render();
+      });
+      return el;
+    }
+    taglist.appendChild(mk('toutes'));
+    tags.forEach(t=>taglist.appendChild(mk(t)));
+  }
+
+  function filtered(){
+    const q = state.query.toLowerCase();
+    const tag = state.filterTag && state.filterTag!=='toutes' ? state.filterTag : null;
+    return state.items.filter(i=>{
+      const hay = [i.title, i.url, i.notes, ...(i.tags||[])].join(' ').toLowerCase();
+      const okQ = !q || hay.includes(q);
+      const okT = !tag || (i.tags||[]).includes(tag);
+      return okQ && okT;
+    });
+  }
+
+  function onDragStart(e, id){
+    e.dataTransfer.setData('text/plain', id);
+    e.dataTransfer.effectAllowed = 'move';
+  }
+  function onDragOver(e){ e.preventDefault(); e.dataTransfer.dropEffect='move'; e.currentTarget.classList.add('drag-over'); }
+  function onDragLeave(e){ e.currentTarget.classList.remove('drag-over'); }
+  function onDrop(e, targetId){
+    e.preventDefault(); e.currentTarget.classList.remove('drag-over');
+    const id = e.dataTransfer.getData('text/plain');
+    if(!id || id===targetId) return;
+    const from = state.items.findIndex(i=>i.id===id);
+    const to = state.items.findIndex(i=>i.id===targetId);
+    if(from<0 || to<0) return;
+    const [moved] = state.items.splice(from,1);
+    state.items.splice(to,0,moved);
+    save(); render();
+  }
+
+  function createCard(it){
+    const card = document.createElement('div');
+    card.className='card';
+    card.draggable = true;
+    card.addEventListener('dragstart', e=>onDragStart(e, it.id));
+    card.addEventListener('dragover', onDragOver);
+    card.addEventListener('dragleave', onDragLeave);
+    card.addEventListener('drop', e=>onDrop(e, it.id));
+
+    const icon = document.createElement('img');
+    icon.className='favicon';
+    icon.referrerPolicy = 'no-referrer';
+    icon.src = favicon(it.url);
+    icon.alt = '';
+
+    const col = document.createElement('div');
+    col.style.flex='1';
+
+    const a = document.createElement('a');
+    a.href = it.url; a.target='_blank'; a.rel='noopener';
+    a.className='title'; a.textContent = it.title;
+
+    const meta = document.createElement('div');
+    meta.className='meta';
+    meta.textContent = domainFromUrl(it.url) + (it.updatedAt? ' • maj ' + formatDate(it.updatedAt):'');
+
+    const tags = document.createElement('div');
+    tags.className='tags';
+    (it.tags||[]).forEach(t=>{
+      const c = document.createElement('span'); c.className='chip'; c.textContent='#'+t; tags.appendChild(c);
+    });
+
+    const actions = document.createElement('div');
+    actions.className='card-actions';
+
+    actions.appendChild(iconBtn('Copier', () => copyToClipboard(it.url), svgCopy()));
+    actions.appendChild(iconBtn('Éditer', () => editItem(it.id), svgEdit()));
+    actions.appendChild(iconBtn('Dupliquer', () => cloneItem(it.id), svgClone()));
+    actions.appendChild(iconBtn('Supprimer', () => deleteItem(it.id), svgTrash(), true));
+
+    col.appendChild(a); col.appendChild(meta);
+    if((it.tags||[]).length) col.appendChild(tags);
+
+    card.appendChild(icon);
+    card.appendChild(col);
+    card.appendChild(actions);
+
+    const dragOutline = document.createElement('div');
+    dragOutline.className='drag';
+    card.appendChild(dragOutline);
+
+    return card;
+  }
+
+  function iconBtn(title, fn, svg, warn){
+    const b = document.createElement('button');
+    b.type='button';
+    b.className='iconbtn'+(warn?' warn':'');
+    b.title = title; b.innerHTML = svg;
+    b.addEventListener('click', fn);
+    return b;
+  }
+
+  function svgTrash(){ return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>` }
+  function svgEdit(){ return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"></path></svg>` }
+  function svgCopy(){ return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>` }
+  function svgClone(){ return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v1"></path></svg>` }
+
+  function render(){
+    const list = filtered();
+    renderTags();
+    grid.innerHTML = '';
+    if(!list.length){ empty.classList.remove('hidden'); return } else { empty.classList.add('hidden'); }
+    list.forEach(it=> grid.appendChild(createCard(it)));
+  }
+
+  form.addEventListener('submit', upsert);
+  cancelEdit.addEventListener('click', clearForm);
+
+  inputQ.addEventListener('input', (e)=>{ state.query = e.target.value; render(); });
+  document.addEventListener('keydown', (e)=>{
+    if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==='k'){ e.preventDefault(); inputQ.focus(); }
+  });
+
+  btnExport.addEventListener('click', ()=>{
+    const data = JSON.stringify({version:1, exportedAt:Date.now(), items: state.items}, null, 2);
+    const blob = new Blob([data], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'recettes-links-backup.json';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+  btnImport.addEventListener('click', ()=> fileImport.click());
+  fileImport.addEventListener('change', async (e)=>{
+    const file = e.target.files[0]; if(!file) return;
+    const text = await file.text();
+    try{
+      const json = JSON.parse(text);
+      if(Array.isArray(json)){
+        // legacy flat array
+        state.items = json;
+      }else if(Array.isArray(json.items)){
+        state.items = json.items;
+      }else throw new Error('Format inconnu');
+      // normalize
+      state.items = state.items.map(i=>({
+        id: i.id || uid(),
+        title: i.title || 'Sans titre',
+        url: i.url || '',
+        tags: Array.isArray(i.tags)? i.tags.map(t=>String(t).toLowerCase()) : parseTags(i.tags),
+        notes: i.notes || '',
+        createdAt: i.createdAt || Date.now(),
+        updatedAt: Date.now()
+      }))
+      save(); render(); toast('Import réussi');
+    }catch(err){ alert('Import impossible : '+err.message); }
+    fileImport.value = '';
+  });
+
+  btnClear.addEventListener('click', ()=>{
+    if(!state.items.length){ toast('Rien à effacer'); return }
+    // Safety: auto-export before wiping
+    const data = JSON.stringify({version:1, exportedAt:Date.now(), items: state.items}, null, 2);
+    const blob = new Blob([data], {type:'application/json'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'avant-effacement-recettes.json';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    if(confirm('Un fichier de sauvegarde a été téléchargé. Voulez-vous vraiment tout effacer ?')){
+      state.items = []; save(); render();
+    }
+  });
+
+  // Initial render
+  render();
+})();
+</script>
+</body>
+</html>
