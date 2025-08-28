@@ -151,11 +151,41 @@
 (function(){
   const LS_KEY = 'recette_links_v1';
   const state = {
-    items: load(),
+items: [],
     query: '',
     filterTag: null,
     editingId: null
   };
+async function loadFromFile() {
+  try {
+    const res = await fetch("recettes.json");
+    if (!res.ok) return [];
+    const json = await res.json();
+    let items = [];
+
+    if (Array.isArray(json)) {
+      items = json;
+    } else if (Array.isArray(json.items)) {
+      items = json.items;
+    }
+
+    // normalisation
+    return items.map(i=>({
+      id: i.id || uid(),
+      title: i.title || 'Sans titre',
+      url: i.url || '',
+      tags: Array.isArray(i.tags)? i.tags.map(t=>String(t).toLowerCase()) : parseTags(i.tags),
+      notes: i.notes || '',
+      createdAt: i.createdAt || Date.now(),
+      updatedAt: i.updatedAt || Date.now(),
+      source: 'file'
+    }));
+
+  } catch (err) {
+    console.warn("Impossible de charger recettes.json :", err);
+    return [];
+  }
+}
 
   const $ = sel => document.querySelector(sel);
   const grid = $('#grid');
@@ -474,7 +504,21 @@
     }
   });
 
-  // Initial render
+(async ()=>{
+  const fileItems = await loadFromFile();
+  const localItems = load();
+
+  // fusionner file + local (éviter doublons par id)
+  const existingIds = new Set();
+  state.items = [...fileItems, ...localItems].filter(it=>{
+    if(existingIds.has(it.id)) return false;
+    existingIds.add(it.id);
+    return true;
+  });
+
+  save(); 
+  render();
+})();
   render();
 })();
 </script>
