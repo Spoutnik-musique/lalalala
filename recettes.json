@@ -1,7 +1,31 @@
 {
   "version": 1,
-  "exportedAt": 1756364799484,
+  "exportedAt": 1756501838260,
   "items": [
+    {
+      "id": "ktt32bz",
+      "title": "Brochette de poulet Yakitori",
+      "url": "https://irasshai.co/blogs/recettes-japonaises/yakitori-au-poulet-et-sauce-tare-maison",
+      "tags": [
+        "poulet",
+        "yakitori"
+      ],
+      "notes": "",
+      "createdAt": 1756501834691,
+      "updatedAt": 1756501834691
+    },
+    {
+      "id": "lx42b5z",
+      "title": "Poulet Teriyaki (autres recette)",
+      "url": "https://blog.lemarchejaponais.fr/recette-poulet-teriyaki.html",
+      "tags": [
+        "poulet",
+        "teriyaki"
+      ],
+      "notes": "",
+      "createdAt": 1756501661399,
+      "updatedAt": 1756501661399
+    },
     {
       "id": "qn8hkna",
       "title": "Tender",
@@ -11,7 +35,8 @@
       ],
       "notes": "",
       "createdAt": 1756364795888,
-      "updatedAt": 1756364795888
+      "updatedAt": 1756364795888,
+      "source": "file"
     },
     {
       "id": "mjwyuts",
@@ -23,7 +48,8 @@
       ],
       "notes": "",
       "createdAt": 1756364715635,
-      "updatedAt": 1756364715635
+      "updatedAt": 1756364715635,
+      "source": "file"
     },
     {
       "id": "7gefeht",
@@ -36,7 +62,8 @@
       ],
       "notes": "",
       "createdAt": 1756364625232,
-      "updatedAt": 1756364625232
+      "updatedAt": 1756364625232,
+      "source": "file"
     },
     {
       "id": "tn2m5qs",
@@ -48,7 +75,8 @@
       ],
       "notes": "",
       "createdAt": 1756364554858,
-      "updatedAt": 1756364554858
+      "updatedAt": 1756364554858,
+      "source": "file"
     },
     {
       "id": "q5g3zgn",
@@ -61,7 +89,8 @@
       ],
       "notes": "",
       "createdAt": 1756364499592,
-      "updatedAt": 1756364499592
+      "updatedAt": 1756364499592,
+      "source": "file"
     },
     {
       "id": "liw7c6s",
@@ -73,7 +102,8 @@
       ],
       "notes": "",
       "createdAt": 1756364455698,
-      "updatedAt": 1756364455698
+      "updatedAt": 1756364455698,
+      "source": "file"
     },
     {
       "id": "3duxcfj",
@@ -85,7 +115,8 @@
       ],
       "notes": "",
       "createdAt": 1756364388310,
-      "updatedAt": 1756364388310
+      "updatedAt": 1756364388310,
+      "source": "file"
     },
     {
       "id": "rpqni4u",
@@ -98,7 +129,8 @@
       ],
       "notes": "",
       "createdAt": 1756364352132,
-      "updatedAt": 1756364352132
+      "updatedAt": 1756364352132,
+      "source": "file"
     },
     {
       "id": "s0he04o",
@@ -110,7 +142,8 @@
       ],
       "notes": "",
       "createdAt": 1756364297040,
-      "updatedAt": 1756364297040
+      "updatedAt": 1756364297040,
+      "source": "file"
     },
     {
       "id": "ee9vllz",
@@ -123,7 +156,8 @@
       ],
       "notes": "",
       "createdAt": 1756364266194,
-      "updatedAt": 1756364266194
+      "updatedAt": 1756364266194,
+      "source": "file"
     },
     {
       "id": "r5sz5wx",
@@ -134,7 +168,8 @@
       ],
       "notes": "",
       "createdAt": 1756364185618,
-      "updatedAt": 1756364185618
+      "updatedAt": 1756364185618,
+      "source": "file"
     },
     {
       "id": "9rgm4wj",
@@ -147,6 +182,18 @@
       "createdAt": 1756142556240,
       "updatedAt": 1756364231522,
       "source": "file"
+    },
+    {
+      "id": "k1jmoq8",
+      "title": "ENTRECÔTES FRITES",
+      "url": "https://youtu.be/S-KDxoPyBWE?si=O5BuqQlqdOGZ3s-c",
+      "tags": [
+        "entrecôtes",
+        "frites"
+      ],
+      "notes": "",
+      "createdAt": 1756392496668,
+      "updatedAt": 1756392496668
     }
   ]
 }
